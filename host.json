@@ -1,0 +1,26 @@
+{
+  "version": "2.0",
+  "extensions": {
+    "http": {
+      "routePrefix": "",
+      "maxConcurrentRequests": 100,
+      "maxOutstandingRequests": 200,
+      "cors": {
+        "allowedOrigins": [
+          "http://localhost:4200"
+        ],
+        "allowedMethods": [
+          "GET",
+          "POST",
+          "PUT",
+          "DELETE",
+          "OPTIONS"
+        ],
+        "allowedHeaders": [
+          "Content-Type",
+          "Authorization"
+        ]
+      }
+    }
+  }
+}
