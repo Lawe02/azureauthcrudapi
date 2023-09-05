@@ -61,6 +61,7 @@ namespace FunctionsApi.EndPoints
                 var jsonString = JsonSerializer.Serialize(jsonResponse);  
 
                 response.WriteString(jsonString);
+                await response.WriteAsJsonAsync(jsonResponse);
                 _logger.LogInformation(token.ToString());
                 return response;
             }
