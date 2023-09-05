@@ -66,6 +66,7 @@ namespace FunctionsApi.EndPoints
             }
 
             _logger.LogInformation("User not found, gutter!!!");
+            response.StatusCode=HttpStatusCode.NotFound;
             response.WriteString("User not found");
 
             return response;
