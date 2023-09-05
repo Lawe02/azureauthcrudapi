@@ -71,7 +71,7 @@ namespace FunctionsApi.EndPoints
             return response;
         }
         [Function("GetBooks")]
-        public async Task<HttpResponseData> GetAsync([HttpTrigger(AuthorizationLevel.Function, "get")] HttpRequestData req, FunctionContext executionContext)
+        public async Task<HttpResponseData> GetAsync([HttpTrigger(AuthorizationLevel.Anonymous, "get")] HttpRequestData req, FunctionContext executionContext)
         {
             var response = req.CreateResponse(HttpStatusCode.OK);
 
