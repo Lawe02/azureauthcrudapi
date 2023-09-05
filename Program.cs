@@ -26,15 +26,15 @@ var host = new HostBuilder()
                 };
             });
 
-        workerBuilder.Services.AddCors(options =>
-        {
-            options.AddDefaultPolicy(builder =>
-            {
-                builder.WithOrigins("https://localhost:4200")
-                    .AllowAnyHeader()
-                    .AllowAnyMethod();
-            });
-        });
+        //workerBuilder.Services.AddCors(options =>
+        //{
+        //    options.AddDefaultPolicy(builder =>
+        //    {
+        //        builder.WithOrigins("https://localhost:4200")
+        //            .AllowAnyHeader()
+        //            .AllowAnyMethod();
+        //    });
+        //});
 
         // Add other services if needed
 

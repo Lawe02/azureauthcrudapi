@@ -90,7 +90,7 @@ namespace FunctionsApi.EndPoints
         }
 
         [Function("DeleteBook")]
-        public async Task<HttpResponseData> DeleteAsync([HttpTrigger(Microsoft.Azure.Functions.Worker.AuthorizationLevel.Function, "delete")] HttpRequestData req, FunctionContext executionContext)
+        public async Task<HttpResponseData> DeleteAsync([HttpTrigger(AuthorizationLevel.Anonymous, "delete")] HttpRequestData req, FunctionContext executionContext)
         {
             var response = req.CreateResponse(HttpStatusCode.OK);
 
@@ -132,7 +132,7 @@ namespace FunctionsApi.EndPoints
         }
 
         [Function("CreateBook")]
-        public async Task<HttpResponseData> CreateAsync([HttpTrigger(AuthorizationLevel.Function, "post")] HttpRequestData req, FunctionContext executionContext)
+        public async Task<HttpResponseData> CreateAsync([HttpTrigger(AuthorizationLevel.Anonymous, "post")] HttpRequestData req, FunctionContext executionContext)
         {
             var response = req.CreateResponse(HttpStatusCode.OK);
             response.Headers.Add("Content-Type", MediaTypeNames.Application.Json);
@@ -156,7 +156,7 @@ namespace FunctionsApi.EndPoints
         }
 
         [Function("UpdateBook")]
-        public async Task<HttpResponseData> UpdateAsync([HttpTrigger(AuthorizationLevel.Function, "post")] HttpRequestData req, FunctionContext executionContext)
+        public async Task<HttpResponseData> UpdateAsync([HttpTrigger(AuthorizationLevel.Anonymous, "post")] HttpRequestData req, FunctionContext executionContext)
         {
             var response = req.CreateResponse(HttpStatusCode.OK);
             response.Headers.Add("Content-Type", MediaTypeNames.Application.Json);
@@ -183,7 +183,7 @@ namespace FunctionsApi.EndPoints
 
         }
         [Function("test")]
-        public async Task<HttpResponseData> TestAsync([HttpTrigger(AuthorizationLevel.Function, "get")] HttpRequestData req, FunctionContext executionContext)
+        public async Task<HttpResponseData> TestAsync([HttpTrigger(AuthorizationLevel.Anonymous, "get")] HttpRequestData req, FunctionContext executionContext)
         {
             var response = req.CreateResponse(HttpStatusCode.OK);
             response.WriteString("SABJASBJKASBKJSABJKSA");
