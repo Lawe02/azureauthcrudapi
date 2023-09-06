@@ -41,7 +41,7 @@ namespace FunctionsApi.EndPoints
             _logger.LogInformation("C# HTTP trigger function processed a request.");
 
             var response = req.CreateResponse(HttpStatusCode.OK);
-            response.Headers.Add("Content-Type", MediaTypeNames.Application.Json);
+            //response.Headers.Add("Content-Type", MediaTypeNames.Application.Json);
 
             var userLogin = await req.ReadFromJsonAsync<UserLogin>();
 
@@ -60,7 +60,7 @@ namespace FunctionsApi.EndPoints
                 var jsonResponse = new { token };
                 var jsonString = JsonSerializer.Serialize(jsonResponse);  
 
-                response.WriteString(jsonString);
+                //response.WriteString(jsonString);
                 await response.WriteAsJsonAsync(jsonResponse);
                 _logger.LogInformation(token.ToString());
                 return response;
